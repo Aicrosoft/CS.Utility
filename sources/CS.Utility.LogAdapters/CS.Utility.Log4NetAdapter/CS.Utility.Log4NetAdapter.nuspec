@@ -14,7 +14,7 @@
     <copyright>Copyright cszi.com 2011</copyright>
     <tags>CSStudio,CSWare,Utility,Adapter,Log4Net</tags>
     <dependencies>
-      <dependency id="log4net" />
+      <dependency id="log4net" version="2.0.5" />
     </dependencies>
   </metadata>
   <files>
