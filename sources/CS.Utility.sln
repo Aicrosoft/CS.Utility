@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS.Utility.LogAdapters", "CS.Utility.LogAdapters", "{57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{28A397B1-B025-4D78-9A28-FE5486B95038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility", "CS.Utility\CS.Utility.csproj", "{10058F6A-905F-4AFD-83D8-05D6FE7F651D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Log4NetAdapter", "CS.Utility.LogAdapters\CS.Utility.Log4NetAdapter\CS.Utility.Log4NetAdapter.csproj", "{881AAA81-B882-45A6-A305-AE0E83ADD0D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.NLogAdapter", "CS.Utility.LogAdapters\CS.Utility.NLogAdapter\CS.Utility.NLogAdapter.csproj", "{1F832200-BAF8-4D9C-9931-5F96ACC42305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10058F6A-905F-4AFD-83D8-05D6FE7F651D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10058F6A-905F-4AFD-83D8-05D6FE7F651D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10058F6A-905F-4AFD-83D8-05D6FE7F651D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10058F6A-905F-4AFD-83D8-05D6FE7F651D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881AAA81-B882-45A6-A305-AE0E83ADD0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881AAA81-B882-45A6-A305-AE0E83ADD0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881AAA81-B882-45A6-A305-AE0E83ADD0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881AAA81-B882-45A6-A305-AE0E83ADD0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{881AAA81-B882-45A6-A305-AE0E83ADD0D4} = {57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}
+		{1F832200-BAF8-4D9C-9931-5F96ACC42305} = {57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}
+	EndGlobalSection
+EndGlobal
