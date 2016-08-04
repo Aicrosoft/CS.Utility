@@ -14,7 +14,7 @@
     <copyright>Copyright cszi.com 2011</copyright>
     <tags>CSStudio,CSWare,Utility,Adapter,NLog</tags>
     <dependencies>
-      <dependency id="NLog" />
+      <dependency id="NLog" version="4.3.6" />
     </dependencies>
   </metadata>
   <files>
