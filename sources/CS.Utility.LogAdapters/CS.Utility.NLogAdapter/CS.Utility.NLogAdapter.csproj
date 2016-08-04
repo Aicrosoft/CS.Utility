@@ -58,6 +58,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Config.transform" />
+    <None Include="Demo.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<configSections>
+		<sectionGroup name="cszi.com">
+			<section name="log" type="CS.Configuration.LoggerSection, CS.Utility" />
+		</sectionGroup>
+	</configSections>
+
+  <cszi.com>
+		<log factory="CS.Log4NetAdapter.Log4NetFactory, CS.Utility.Log4NetAdapter" />
+	</cszi.com>
+</configuration>

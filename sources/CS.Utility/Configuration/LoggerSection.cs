@@ -6,7 +6,7 @@ using CS.Logging;
 namespace CS.Configuration
 {
     /// <summary>
-    /// 
+    /// 关于Logger的Section解析
     /// </summary>
     public class LoggerSection : ConfigurationSection
     {

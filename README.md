@@ -16,8 +16,8 @@
 
 ### Build & Test Status ###
 ----------
-dev: [![Build status](https://ci.appveyor.com/api/projects/status/gpf06okuuyjw6fhg?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility)  
-master: [![Build status](https://ci.appveyor.com/api/projects/status/gpf06okuuyjw6fhg/branch/master?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility/branch/master)  
+Current status: [![Build status](https://ci.appveyor.com/api/projects/status/er60oghxykhgjaqh?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility)  
+master branch status : [![Build status](https://ci.appveyor.com/api/projects/status/er60oghxykhgjaqh/branch/master?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility/branch/master)
 nuget: [![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg?maxAge=2592000)](https://www.nuget.org/packages/CS.Utility/)   
 
 ---------------
