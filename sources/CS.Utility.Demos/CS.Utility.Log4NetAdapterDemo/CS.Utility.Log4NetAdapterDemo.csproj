@@ -33,16 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CS.Utility, Version=0.1.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CS.Utility.0.1.0.1\lib\net46\CS.Utility.dll</HintPath>
+    <Reference Include="CS.Utility, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CS.Utility.0.1.0.2\lib\net46\CS.Utility.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CS.Utility.Log4NetAdapter, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CS.Utility.Log4NetAdapter.0.1.0\lib\net46\CS.Utility.Log4NetAdapter.dll</HintPath>
+    <Reference Include="CS.Utility.Log4NetAdapter, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CS.Utility.Log4NetAdapter.0.1.2\lib\net46\CS.Utility.Log4NetAdapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
