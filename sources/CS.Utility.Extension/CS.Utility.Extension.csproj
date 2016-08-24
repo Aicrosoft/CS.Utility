@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{881AAA81-B882-45A6-A305-AE0E83ADD0D4}</ProjectGuid>
+    <ProjectGuid>{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CS.Log4NetAdapter</RootNamespace>
-    <AssemblyName>CS.Utility.Log4NetAdapter</AssemblyName>
+    <RootNamespace>CS</RootNamespace>
+    <AssemblyName>CS.Utility.Extension</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\bitbucket.org\eRobot\sources\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -45,22 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
+    <Compile Include="..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
       <Link>Properties\AssemblyCompanyInfo.cs</Link>
     </Compile>
-    <Compile Include="Log4NetFactory.cs" />
-    <Compile Include="Log4NetWrapper.cs" />
+    <Compile Include="Extension\JsonExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CS.Utility\CS.Utility.csproj">
-      <Project>{10058f6a-905f-4afd-83d8-05d6fe7f651d}</Project>
-      <Name>CS.Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Config.transform" />
-    <None Include="Demo.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

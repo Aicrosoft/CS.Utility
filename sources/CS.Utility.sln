@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS.Utility.Demos", "CS.Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Log4NetAdapterDemo", "CS.Utility.Demos\CS.Utility.Log4NetAdapterDemo\CS.Utility.Log4NetAdapterDemo.csproj", "{86F4D325-DB0F-45BC-8A61-11B828C2B268}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Extension", "CS.Utility.Extension\CS.Utility.Extension.csproj", "{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Form", "CS.Utility.Form\CS.Utility.Form.csproj", "{911D1916-03ED-4B32-88CD-12EE3CE11AC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EDF82E-9DA2-41B5-A28D-00E038C01ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911D1916-03ED-4B32-88CD-12EE3CE11AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911D1916-03ED-4B32-88CD-12EE3CE11AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911D1916-03ED-4B32-88CD-12EE3CE11AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911D1916-03ED-4B32-88CD-12EE3CE11AC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

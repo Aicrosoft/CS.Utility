@@ -34,10 +34,11 @@ master branch status : [![Build status](https://ci.appveyor.com/api/projects/sta
 > PM> Install-Package CS.Utility.Log4NetAdapter  
 
 
+
 --------------
 
 ### 开发约定
-- .Net最低版本4.6
+- .Net最低版本4.5
 - IDE环境：VS2015
 - **CS.Utility**项目中不引用任何非.Net的基础库，但会通过Adapter模式引入其它的开源库
 - 除非特殊情况，都采用UTF-8进行编码（如遇特殊情况，也必须提供UTF8的接口）
