@@ -65,6 +65,8 @@
     <Compile Include="Storage\StringStorage.cs" />
     <Compile Include="Storage\XmlStorage.cs" />
     <Compile Include="Utils\AppHelper.cs" />
+    <Compile Include="Utils\CodeTimer.cs" />
+    <Compile Include="Utils\DebugConsole.cs" />
     <Compile Include="Utils\FileHelper.cs" />
     <Compile Include="Utils\GZipHelper.cs" />
     <Compile Include="Utils\HashHelper.cs" />

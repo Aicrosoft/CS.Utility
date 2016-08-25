@@ -13,7 +13,6 @@ namespace CS.Utils
     {
 
 
-
         /// <summary>
         /// 将多个文件拷贝至目标目录
         /// </summary>
@@ -28,7 +27,7 @@ namespace CS.Utils
                 //Console.WriteLine(destFile);
                 if (!overwrite && File.Exists(destFile))
                 {
-                    Console.WriteLine($"{destFile}已经存在，跳过。");
+                    DebugConsole.Debug($"{destFile}已经存在，跳过。");
                     return;
                 }
                 GetFullPathCreateIfNeed(destFile);
@@ -46,7 +45,7 @@ namespace CS.Utils
         {
             if (!overwrite && File.Exists(destFile))
             {
-                Console.WriteLine($"{destFile}已经存在，跳过。");
+                DebugConsole.Debug($"{destFile}已经存在，跳过。");
                 return;
             }
             GetFullPathCreateIfNeed(destFile);
@@ -61,7 +60,7 @@ namespace CS.Utils
         public static string GetExtension(string uri) => Path.GetExtension(uri);
 
         /// <summary>
-        /// 返回文件或目录的全路径
+        /// 返回文件或目录的全路径 注意（文件名前必须有相对路径符号 /  or  ~）
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -82,7 +81,7 @@ namespace CS.Utils
             var filePath = GetFullPathCreateIfNeed(file);
             if (File.Exists(filePath) && !overwrite)
             {
-                Console.WriteLine($"{filePath}已经存在，跳过。");
+                DebugConsole.Debug($"{filePath}已经存在，跳过。");
                 return;
             }
             File.WriteAllText(filePath, content, encoding ?? Encoding.UTF8);
