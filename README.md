@@ -16,14 +16,23 @@
 
 ### Build & Test Status ###
 ----------
-dev: [![Build status](https://ci.appveyor.com/api/projects/status/gpf06okuuyjw6fhg?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility)  
-master: [![Build status](https://ci.appveyor.com/api/projects/status/gpf06okuuyjw6fhg/branch/master?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility/branch/master)  
-nuget: [![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg?maxAge=2592000)](https://www.nuget.org/packages/CS.Utility/)   
+current status: [![Build status](https://ci.appveyor.com/api/projects/status/er60oghxykhgjaqh?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility)  
+master branch status : [![Build status](https://ci.appveyor.com/api/projects/status/er60oghxykhgjaqh/branch/master?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility/branch/master)         
+---------- -        
+- CS.Utility   [![NuGet](https://img.shields.io/nuget/v/CS.Utility.svg)](https://www.nuget.org/packages/CS.Utility/)          
+          
+- CS.Utility.NLogAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.NLogAdapter.svg)](https://www.nuget.org/packages/CS.Utility.NLogAdapter/)       
+- CS.Utility.Log4NetAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Log4NetAdapter.svg)](https://www.nuget.org/packages/CS.Utility.Log4NetAdapter/)     
+         
+
 
 ---------------
-### 安装本类库 (To install CS.Utility, run the following command in the Package Manager Console)
+### 安装本类库 (To install CS.Utility, run the following command in the Package Manager Console，适配器会自动安装依赖包)
 
-> PM> Install-Package CS.Utility
+> PM> Install-Package CS.Utility   
+> PM> Install-Package CS.Utility.NLogAdapter   
+> PM> Install-Package CS.Utility.Log4NetAdapter  
+
 
 --------------
 

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10058F6A-905F-4AFD-83D8-05D6FE7F651D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{86F4D325-DB0F-45BC-8A61-11B828C2B268}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CS</RootNamespace>
-    <AssemblyName>CS.Utility</AssemblyName>
+    <RootNamespace>CS.Utility.Log4NetAdapterDemo</RootNamespace>
+    <AssemblyName>CS.Utility.Log4NetAdapterDemo</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CS.Utility, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CS.Utility.0.1.0.2\lib\net46\CS.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CS.Utility.Log4NetAdapter, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CS.Utility.Log4NetAdapter.0.1.2\lib\net46\CS.Utility.Log4NetAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,42 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Result.cs" />
-    <Compile Include="Configuration\ConfigHelper.cs" />
-    <Compile Include="Configuration\ConfigurationHelper.cs" />
-    <Compile Include="Configuration\InterfaceValidator.cs" />
-    <Compile Include="Configuration\LoggerSection.cs" />
-    <Compile Include="Extension\ConditionalExt.cs" />
-    <Compile Include="Extension\StringExt.cs" />
-    <Compile Include="Logging\ConsoleLogFactory.cs" />
-    <Compile Include="Logging\DiagnosticsLogFactory.cs" />
-    <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\ILogFactory.cs" />
-    <Compile Include="Logging\LogManager.cs" />
-    <Compile Include="Logging\NullLoggerFactory.cs" />
-    <Compile Include="Logging\TextWriterLog.cs" />
-    <Compile Include="Properties\AssemblyCompanyInfo.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reflection\FastActivator.cs" />
-    <Compile Include="Serialization\ByteSerializor.cs" />
-    <Compile Include="Serialization\XmlCdataText.cs" />
-    <Compile Include="Serialization\XmlSerializor.cs" />
-    <Compile Include="Storage\FileStorage.cs" />
-    <Compile Include="Storage\StringStorage.cs" />
-    <Compile Include="Storage\XmlStorage.cs" />
-    <Compile Include="Utils\AppHelper.cs" />
-    <Compile Include="Utils\CodeTimer.cs" />
-    <Compile Include="Utils\DebugConsole.cs" />
-    <Compile Include="Utils\FileHelper.cs" />
-    <Compile Include="Utils\GZipHelper.cs" />
-    <Compile Include="Utils\HashHelper.cs" />
-    <Compile Include="Utils\TaskHelper.cs" />
-    <Compile Include="Utils\TypeHelper.cs" />
+    <Compile Include="Properties\AssemblyInfoLog4Net.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="config\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

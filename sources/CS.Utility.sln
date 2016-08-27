@@ -5,13 +5,19 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS.Utility.LogAdapters", "CS.Utility.LogAdapters", "{57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{28A397B1-B025-4D78-9A28-FE5486B95038}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS.Utility.Tests", "CS.Utility.Tests", "{28A397B1-B025-4D78-9A28-FE5486B95038}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility", "CS.Utility\CS.Utility.csproj", "{10058F6A-905F-4AFD-83D8-05D6FE7F651D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Log4NetAdapter", "CS.Utility.LogAdapters\CS.Utility.Log4NetAdapter\CS.Utility.Log4NetAdapter.csproj", "{881AAA81-B882-45A6-A305-AE0E83ADD0D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.NLogAdapter", "CS.Utility.LogAdapters\CS.Utility.NLogAdapter\CS.Utility.NLogAdapter.csproj", "{1F832200-BAF8-4D9C-9931-5F96ACC42305}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.UtilityTests", "CS.Utility.Tests\CS.UtilityTests\CS.UtilityTests.csproj", "{774369FE-1B75-4950-AED0-913359270F1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS.Utility.Demos", "CS.Utility.Demos", "{F67B34FA-8123-4A1E-8013-0B85D91A485A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Utility.Log4NetAdapterDemo", "CS.Utility.Demos\CS.Utility.Log4NetAdapterDemo\CS.Utility.Log4NetAdapterDemo.csproj", "{86F4D325-DB0F-45BC-8A61-11B828C2B268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,14 @@ Global
 		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F832200-BAF8-4D9C-9931-5F96ACC42305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774369FE-1B75-4950-AED0-913359270F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774369FE-1B75-4950-AED0-913359270F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774369FE-1B75-4950-AED0-913359270F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774369FE-1B75-4950-AED0-913359270F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F4D325-DB0F-45BC-8A61-11B828C2B268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{881AAA81-B882-45A6-A305-AE0E83ADD0D4} = {57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}
 		{1F832200-BAF8-4D9C-9931-5F96ACC42305} = {57BD6AF6-D64F-4F4A-95C5-1C091A1C86C9}
+		{774369FE-1B75-4950-AED0-913359270F1A} = {28A397B1-B025-4D78-9A28-FE5486B95038}
+		{86F4D325-DB0F-45BC-8A61-11B828C2B268} = {F67B34FA-8123-4A1E-8013-0B85D91A485A}
 	EndGlobalSection
 EndGlobal
