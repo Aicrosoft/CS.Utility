@@ -48,6 +48,7 @@
     <Compile Include="Configuration\LoggerSection.cs" />
     <Compile Include="Extension\ConditionalExt.cs" />
     <Compile Include="Extension\StringExt.cs" />
+    <Compile Include="Extension\XmlSerializeExt.cs" />
     <Compile Include="Logging\ConsoleLogFactory.cs" />
     <Compile Include="Logging\DiagnosticsLogFactory.cs" />
     <Compile Include="Logging\ILog.cs" />
