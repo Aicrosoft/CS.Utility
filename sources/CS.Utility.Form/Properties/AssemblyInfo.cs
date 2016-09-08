@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("CS.Utility.Form")]
-[assembly: AssemblyDescription("有关Form的相关常用类")]
+[assembly: AssemblyDescription("有关Form的相关扩展及常用类")]
 [assembly: AssemblyConfiguration("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型

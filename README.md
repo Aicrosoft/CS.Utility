@@ -30,9 +30,11 @@ master branch status : [![Build status](https://ci.appveyor.com/api/projects/sta
 ### 安装本类库 (To install CS.Utility, run the following command in the Package Manager Console，适配器会自动安装依赖包)
 
 > PM> Install-Package CS.Utility   
+> PM> Install-Package CS.Utility.Extension
 > PM> Install-Package CS.Utility.NLogAdapter   
 > PM> Install-Package CS.Utility.Log4NetAdapter  
-
+> PM> Install-Package CS.Utility.Form  
+> PM> Install-Package CS.Utility.Web  
 
 
 --------------
@@ -43,6 +45,10 @@ master branch status : [![Build status](https://ci.appveyor.com/api/projects/sta
 - **CS.Utility**项目中不引用任何非.Net的基础库，但会通过Adapter模式引入其它的开源库
 - 除非特殊情况，都采用UTF-8进行编码（如遇特殊情况，也必须提供UTF8的接口）
 - Extension文件夹采用命字空间命名，方便扩展方法的使用。
+- 在使用“可选参数”时应该遵循以下的原则：在public API（包括公开类型的公开成员和公开类型的受保护成员）中尽量不要用“可选参数”，而是使用方法重载，以避免API行为不一致。在程序集内部的私有API中，如果有使用该方法的委托也不能采用默认值参数。
+
+
+
 
 ----------
 
