@@ -15,6 +15,6 @@
     <tags>CSStudio,CSWare,Utility,Lib,Log,Trace,Cache,Extension</tags>
   </metadata>
   <files>
-    <file src=".\bin\Release\*.*" target="lib\net4.6" />
+    <file src=".\bin\Release\*.*" target="lib\net4.5" />
   </files>
 </package>
