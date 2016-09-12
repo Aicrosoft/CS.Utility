@@ -32,7 +32,8 @@ master branch status : [![Build status](https://ci.appveyor.com/api/projects/sta
 > PM> Install-Package CS.Utility   
 > PM> Install-Package CS.Utility.NLogAdapter   
 > PM> Install-Package CS.Utility.Log4NetAdapter  
-
+> PM> Install-Package CS.Utility.Extension 
+> PM> Install-Package CS.Utility.Form 
 
 
 --------------

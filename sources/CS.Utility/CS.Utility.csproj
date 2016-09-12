@@ -50,6 +50,12 @@
     <Compile Include="Extension\ConditionalExt.cs" />
     <Compile Include="Extension\StringExt.cs" />
     <Compile Include="Extension\XmlSerializeExt.cs" />
+    <Compile Include="Http\AsyncHttp.cs" />
+    <Compile Include="Http\HttpBase.cs" />
+    <Compile Include="Http\HttpHelper.cs" />
+    <Compile Include="Http\HttpParam.cs" />
+    <Compile Include="Http\HttpParams.cs" />
+    <Compile Include="Http\SyncHttp.cs" />
     <Compile Include="Logging\ConsoleLogFactory.cs" />
     <Compile Include="Logging\DiagnosticsLogFactory.cs" />
     <Compile Include="Logging\ILog.cs" />
