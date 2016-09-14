@@ -35,6 +35,11 @@ using System.Runtime.InteropServices;
 
 /*
 
+v 1.0.5.0
+-----------------
+. 增加基本类型的相关扩展
+
+
 v 0.1.4.0
 -----------------
 . 所有.NetFramework版本改为4.5
