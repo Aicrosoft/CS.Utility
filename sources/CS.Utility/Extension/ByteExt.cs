@@ -11,6 +11,91 @@ namespace CS.Extension
     public static class ByteExtension
     {
 
+        #region stirng -> ToByte() ToPackageByte() btye[] 字符串转为byte[]
+
+        /// <summary>
+        /// 将字符串按UTF8格式转为byte[]
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public static byte[] ToBytes(this string param)
+        {
+            return Encoding.UTF8.GetBytes(param);
+        }
+
+        /// <summary>
+        /// 将字符串按某种编码格式转换为字节流
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public static byte[] ToBytes(this string param, Encoding encoding)
+        {
+            return encoding.GetBytes(param);
+        }
+
+        /// <summary>
+        /// 将字符串转为UTF8的字节数组并在头上加上长度
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static byte[] ToBytesPackage(this string message)
+        {
+            return message.ToBytes().ToPackage();
+        }
+
+        /// <summary>
+        /// 将字符串转为某种编码的字节数组并在头上加上长度
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public static byte[] ToBytesPackage(this string message, Encoding encoding)
+        {
+            return message.ToBytes(encoding).ToPackage();
+        }
+
+
+        #endregion
+
+
+        #region HexToByte 16制字符串转为Byte数组
+
+        /// <summary>
+        /// 16制字符串转为Byte数组
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
+        public static byte[] HexToByte(this string hex)
+        {
+            var fixedHex = hex.Replace("-", string.Empty);
+            // array to put the result in
+            var bytes = new byte[fixedHex.Length / 2];
+            // variable to determine shift of high/low nibble
+            var shift = 4;
+            // offset of the current byte in the array
+            var offset = 0;
+            // loop the characters in the string
+            foreach (char c in fixedHex)
+            {
+                // get character code in range 0-9, 17-22
+                // the % 32 handles lower case characters
+                var b = (c - '0') % 32;
+                // correction for a-f
+                if (b > 9) b -= 7;
+                // store nibble (4 bits) in byte array
+                bytes[offset] |= (byte)(b << shift);
+                // toggle the shift variable between 0 and 4
+                shift ^= 4;
+                // move to next byte
+                if (shift != 0) offset++;
+            }
+            return bytes;
+        }
+
+        #endregion
+
+
         //#region 常用类型转为Byte
 
         ///// <summary>
@@ -47,6 +132,27 @@ namespace CS.Extension
         //    }
         //    return arrResult;
         //}
+
+        /// <summary>
+        /// 返回Int对应的字节数组
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public static byte[] ToBytes(this int param)
+        {
+            return BitConverter.GetBytes(param);
+        }
+
+        /// <summary>
+        /// 返回Uint对应的字节数组
+        /// </summary>
+        /// <param name="pm"></param>
+        /// <returns></returns>
+        public static byte[] ToBytes(this uint pm)
+        {
+            return BitConverter.GetBytes(pm);
+        }
+
 
 
         /// <summary>

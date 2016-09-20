@@ -6,6 +6,9 @@ namespace CS.Extension
 {
     public static class StringExt
     {
+
+        #region 字符串的基本扩展处理
+
         public static bool IsNullOrWhiteSpace(this string str)
         {
             return string.IsNullOrWhiteSpace(str);
@@ -66,8 +69,98 @@ namespace CS.Extension
             return string.IsNullOrWhiteSpace(nullStr) ? trueString : falseString;
         }
 
-       
+        #endregion
 
+
+        #region 字符串统计
+
+        /// <summary>
+        ///  字符串的字节长度
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static int ByteLength(this string s)
+        {
+            var l = 0;
+            foreach (var c in s)
+            {
+                if (c > 255)
+                    l = l + 2;
+                else
+                    l++;
+            }
+            return l;
+        }
+
+        #endregion
+
+
+
+        #region 字符串剪切
+
+        /// <summary>
+        ///     按字节数左剪切
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public static string ByteLeft(this string s, int count)
+        {
+            int bytecount = 0;
+            int charcount = 0;
+            foreach (char c in s)
+            {
+                bytecount += (c > 255 ? 2 : 1);
+                if (bytecount >= count)
+                    break;
+                charcount++;
+            }
+            return charcount >= s.Length ? s : s.Substring(0, charcount);
+        }
+
+        /// <summary>
+        ///     按字符数左剪切
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static string Left(this string s, int length)
+        {
+            return s.Length <= length ? s : s.Substring(0, length);
+        }
+
+        /// <summary>
+        ///     按字节数右剪切
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public static string ByteRight(this string s, int count)
+        {
+            int bytecount = 0;
+            int charcount = 0;
+            foreach (char c in s)
+            {
+                bytecount += (c > 255 ? 2 : 1);
+                if (bytecount >= count)
+                    break;
+                charcount++;
+            }
+            return charcount >= s.Length ? s : s.Substring(s.Length - charcount, charcount);
+        }
+
+        /// <summary>
+        ///     按字符数右剪切
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static string Right(this string s, int length)
+        {
+            return s.Length <= length ? s : s.Substring(s.Length - length, length);
+        }
+
+        #endregion
 
     }
 }

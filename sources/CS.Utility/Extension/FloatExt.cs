@@ -16,11 +16,12 @@
             if (min <= p && p <= max) return p;
             return defaultValue;
         }
+       
 
 
 
         #region string -> ToFloat() Float float 类型处理
-       
+
 
         /// <summary>
         /// 转换失败时为默认值

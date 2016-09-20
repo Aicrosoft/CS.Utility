@@ -52,21 +52,25 @@
 
         #endregion
 
+      
 
-        #region object -> ToDouble() double Double 类型处理
+
+
+        #region object -> ToDecimal() decimal Decimal 类型处理
+
 
         /// <summary>
-        /// 空对象或转换失败时为默认值（0）
+        /// 空对象或转换失败时为默认值
         /// </summary>
         /// <param name="obj">需要转换的object</param>
         /// <param name="defaultValue">默认值 0</param>
         /// <returns>转换结果</returns>
-        public static double ToDouble(this object obj, double defaultValue = 0)
+        public static decimal ToDecimal(this object obj, decimal defaultValue = 0)
         {
             if (obj == null) return defaultValue;
-            if (obj is double) return (double)obj;
-            double val;
-            return double.TryParse(obj.ToString(), out val) ? val : defaultValue;
+            if (obj is decimal) return (decimal)obj;
+            decimal val;
+            return decimal.TryParse(obj.ToString(), out val) ? val : defaultValue;
         }
 
         /// <summary>
@@ -75,14 +79,14 @@
         /// <param name="obj">参数值</param>
         /// <param name="min">最小值</param>
         /// <param name="max">最大值</param>
-        /// <param name="defalutValue">默认值 0</param>
+        /// <param name="defalutValue">默认值</param>
         /// <returns>返回值</returns>
-        public static double ToDouble(this object obj, double min, double max, double defalutValue = 0)
+        public static decimal ToDecimal(this object obj, decimal min, decimal max, decimal defalutValue = 0)
         {
-            var r = obj.ToDouble(defalutValue);
-            return r.ToDouble(defalutValue, min, max);
+            var r = obj.ToDecimal(defalutValue);
+            return r.ToDecimal(defalutValue, min, max);
         }
-
+      
 
         #endregion
 

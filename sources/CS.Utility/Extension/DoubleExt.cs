@@ -54,6 +54,8 @@
 
         #endregion
 
+
+
         #region object -> ToDouble() double Double 类型处理
 
         /// <summary>
@@ -84,9 +86,7 @@
             return r.ToDouble(defalutValue, min, max);
         }
 
-
         #endregion
-
 
 
     }

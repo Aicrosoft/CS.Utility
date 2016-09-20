@@ -31,7 +31,7 @@ namespace CS.Extension
         /// <returns></returns>
         public static int ToEnum(this string value, Type enumType)
         {
-            return (int)Enum.Parse(enumType, value, true);
+            return (int)System.Enum.Parse(enumType, value, true);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace CS.Extension
             T result;
             try
             {
-                result = (T)Enum.Parse(typeof(T), param, true);
+                result = (T)System.Enum.Parse(typeof(T), param, true);
             }
             catch
             {
@@ -79,10 +79,10 @@ namespace CS.Extension
             T result;
             try
             {
-                result = (T)Enum.Parse(typeof(T), param, true);
+                result = (T)System.Enum.Parse(typeof(T), param, true);
                 if (mustDefined)
                 {
-                    var isDefined = Enum.IsDefined(typeof(T), result);
+                    var isDefined = System.Enum.IsDefined(typeof(T), result);
                     return isDefined ? result : defaultValue;
                 }
             }
@@ -98,6 +98,33 @@ namespace CS.Extension
         #endregion
 
 
+        #region int -> ToEnum(int) ToEnum(int,T)  用int来返回可用的枚举类型
+
+        /// <summary>
+        /// 将 数值 转换为 枚举
+        /// </summary>
+        /// <typeparam name="T">目标枚举类型</typeparam>
+        /// <param name="param">需要转换的文本</param>
+        /// <returns>转换结果</returns>
+        public static T Enum<T>(int param)
+        {
+            return $"{param}".ToEnum<T>();
+        }
+
+
+        /// <summary>
+        /// 将 数值 转换为 枚举
+        /// </summary>
+        /// <typeparam name="T">目标枚举类型</typeparam>
+        /// <param name="param">需要转换的文本</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>转换结果</returns>
+        public static T ToEnum<T>(int param, T defaultValue)
+        {
+            return $"{param}".ToEnum(defaultValue);
+        }
+
+        #endregion
 
     }
 }

@@ -6,6 +6,35 @@ namespace CS.Extension
 {
     public static class IntExt
     {
+        /// <summary>
+        /// 当两个给出的int值相同时返回trueStr，否则返回null
+        /// </summary>
+        /// <param name="int1"></param>
+        /// <param name="int2"></param>
+        /// <param name="equalStr"></param>
+        /// <param name="unequalStr"></param>
+        /// <returns></returns>
+        public static string IsEqual(this int int1, int int2, string equalStr,string unequalStr = null)
+        {
+            return int1 == int2 ? equalStr : unequalStr;
+        }
+
+
+        #region ToInt() Int32 类型处理
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="bs"></param>
+        ///// <returns></returns>
+        //public static int ToInt(this byte[] bs)
+        //{
+        //    return BitConverter.ToInt32(bs, 0);
+        //}
+
+
+        #endregion
+
 
         #region string-> ToInt() Int32 类型处理
 
@@ -13,9 +42,19 @@ namespace CS.Extension
         /// 将字符串转换为 int ， 转换失败时为默认值
         /// </summary>
         /// <param name="p">需要转换的文本</param>
+        /// <returns>转换结果</returns>
+        public static int ToInt(this string p)
+        {
+            return p.ToInt(0);
+        }
+
+        /// <summary>
+        /// 将字符串转换为 int ， 转换失败时为默认值
+        /// </summary>
+        /// <param name="p">需要转换的文本</param>
         /// <param name="defaultValue">默认值 0</param>
         /// <returns>转换结果</returns>
-        public static int ToInt(this string p, int defaultValue = 0)
+        public static int ToInt(this string p, int defaultValue)
         {
             int result;
             if (!int.TryParse(p, out result)) result = defaultValue;
@@ -54,6 +93,21 @@ namespace CS.Extension
 
         #endregion
 
+
+        #region decimal 至 int的转换
+
+        /// <summary>
+        /// 四舍五入转为int
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static int ToInt(this decimal val)
+        {
+            return (int)Math.Round(val);
+        }
+
+
+        #endregion
 
 
         #region ToInt() Range
@@ -196,11 +250,12 @@ namespace CS.Extension
         /// <returns>转换结果</returns>
         public static IEnumerable<int> ToIntArray(this string[] param)
         {
-            return Array.ConvertAll(param, ToInt);
+            return System.Array.ConvertAll(param, ToInt);
         }
 
 
         #endregion
+
 
 
 

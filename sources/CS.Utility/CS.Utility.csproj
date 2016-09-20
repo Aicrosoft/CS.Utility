@@ -45,8 +45,17 @@
     <Compile Include="Components\Result.cs" />
     <Compile Include="Configuration\ConfigHelper.cs" />
     <Compile Include="Configuration\ConfigurationHelper.cs" />
+    <Compile Include="Configuration\HandlerBase.cs" />
     <Compile Include="Configuration\InterfaceValidator.cs" />
+    <Compile Include="Configuration\KeyValueSectionHandler.cs" />
     <Compile Include="Configuration\LoggerSection.cs" />
+    <Compile Include="Configuration\SectionBase.cs" />
+    <Compile Include="Cryptography\BigInteger.cs" />
+    <Compile Include="Cryptography\Md5.cs" />
+    <Compile Include="Cryptography\Rsa.cs" />
+    <Compile Include="Cryptography\RSAEncryptor.cs" />
+    <Compile Include="Cryptography\RsaGearHelper.cs" />
+    <Compile Include="Cryptography\SHA1.cs" />
     <Compile Include="Extension\ArrayExt.cs" />
     <Compile Include="Extension\BitExt.cs" />
     <Compile Include="Extension\BooleanExt.cs" />
@@ -59,11 +68,16 @@
     <Compile Include="Extension\EnumerableExt.cs" />
     <Compile Include="Extension\EnumExt.cs" />
     <Compile Include="Extension\FloatExt.cs" />
+    <Compile Include="Extension\HexStringExt.cs" />
     <Compile Include="Extension\IntExt.cs" />
     <Compile Include="Extension\LongExt.cs" />
+    <Compile Include="Extension\ObjectExt.cs" />
     <Compile Include="Extension\ReflectingPrepareExt.cs" />
     <Compile Include="Extension\ShortExt.cs" />
     <Compile Include="Extension\StringExt.cs" />
+    <Compile Include="Extension\TypeExt.cs" />
+    <Compile Include="Extension\UShortExt.cs" />
+    <Compile Include="Extension\XmlDocExt.cs" />
     <Compile Include="Extension\XmlSerializeExt.cs" />
     <Compile Include="Http\AsyncHttp.cs" />
     <Compile Include="Http\HttpBase.cs" />
@@ -81,9 +95,15 @@
     <Compile Include="Properties\AssemblyCompanyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\FastActivator.cs" />
+    <Compile Include="Res.Designer.cs">
+      <DependentUpon>Res.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Serialization\ByteSerializor.cs" />
     <Compile Include="Serialization\XmlCdataText.cs" />
     <Compile Include="Serialization\XmlSerializor.cs" />
+    <Compile Include="SR.cs" />
     <Compile Include="Storage\FileStorage.cs" />
     <Compile Include="Storage\StringStorage.cs" />
     <Compile Include="Storage\XmlStorage.cs" />
@@ -96,7 +116,12 @@
     <Compile Include="Utils\TaskHelper.cs" />
     <Compile Include="Utils\TypeHelper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
