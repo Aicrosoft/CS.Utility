@@ -18,7 +18,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src=".\bin\Release\*.*" target="lib\net4.6" />
+    <file src=".\bin\Release\*.*" target="lib\net4.5" />
     <file src="Config.transform" target="content\app.config.transform" />
   </files>
 </package>

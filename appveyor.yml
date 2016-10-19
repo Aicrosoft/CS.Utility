@@ -33,7 +33,7 @@ assembly_info:
   patch: false
   file: sources\$(libName)\Properties\AssemblyInfo.*			#将上面生成的版本号${version}变量替换原来Lib里的版本信息
   assembly_version: '{version}'
-  assembly_file_version: '4.6.0.0'
+  assembly_file_version: '4.5.0.0'
   assembly_informational_version: '{version}-rc1'
 
 
