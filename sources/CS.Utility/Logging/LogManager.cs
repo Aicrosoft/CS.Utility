@@ -42,12 +42,14 @@ namespace CS.Logging
             {
                 f = FastActivator.Create(section.LogFactory) as ILogFactory;
             }
-#if !log4net
+#if DEBUG
             // use an empty logger if nothing is specified in the app.config
-            LogManager._factory = f ?? (ILogFactory)new NullLoggerFactory();
+            //LogManager._factory = f ?? (ILogFactory)new NullLoggerFactory();
+            LogManager._factory = f ?? (ILogFactory)new ColorConsoleLogFactory();
 #else
 			// use the log4net logger logger if nothing is specified in the app.config
-			LogManager._factory = f ?? (ILogFactory)new Log4NetLogFactory();
+			//LogManager._factory = f ?? (ILogFactory)new Log4NetLogFactory();
+            LogManager._factory = f ?? (ILogFactory)new NullLoggerFactory();
 #endif
         }
 

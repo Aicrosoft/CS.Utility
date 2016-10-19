@@ -15,7 +15,7 @@ namespace CS.Extension
         /// <param name="trueStr"></param>
         /// <param name="falseStr"></param>
         /// <returns></returns>
-        public static string If(this bool express, string trueStr, string falseStr)
+        public static string If(this bool express, string trueStr, string falseStr = null)
         {
             return express ? trueStr : falseStr;
         }

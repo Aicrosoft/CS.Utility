@@ -127,7 +127,7 @@ namespace CS.Utils
                 if (tp != null)
                     return tp;
             }
-            catch (TypeLoadException ex)
+            catch (TypeLoadException)
             {
                 //Tracer.Warn("获取类型时异常", ex);
                 //异常时继续下面的其它程序集查找,所以这儿的日志也没有必要了

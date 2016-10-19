@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace CS.Caching
@@ -42,18 +43,12 @@ namespace CS.Caching
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public T this[string key]
-        {
-            get { return Get(key); }
-        }
+        public T this[string key] => Get(key);
 
         /// <summary>
         /// 所有的缓存键
         /// </summary>
-        public Dictionary<string,T>.KeyCollection Keys
-        {
-            get { return InnerCache.Keys; }
-        }
+        public Dictionary<string, T>.KeyCollection Keys => InnerCache.Keys;
 
         /// <summary>
         /// 找不到缓存时返回null
@@ -72,6 +67,42 @@ namespace CS.Caching
             finally
             {
                 CacheLock.ExitReadLock();
+            }
+        }
+
+        /// <summary>
+        /// 找不到缓存时自动调用委托并缓存
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        public T Get(string key, Func<string, T> func)
+        {
+            CacheLock.EnterUpgradeableReadLock();
+            try
+            {
+                T val;
+                var rst = InnerCache.TryGetValue(key, out val);
+                if (rst) return val;
+                val = func(key);
+                if (val == null)
+                {
+                    return default(T);
+                }
+                CacheLock.EnterWriteLock();
+                try
+                {
+                    InnerCache[key] = val;
+                }
+                finally
+                {
+                    CacheLock.ExitWriteLock();
+                }
+                return val;
+            }
+            finally
+            {
+                CacheLock.ExitUpgradeableReadLock();
             }
         }
 

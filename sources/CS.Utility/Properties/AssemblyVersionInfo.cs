@@ -15,17 +15,25 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.5.0")]  //已取消CI脚本的版本号替换功能，该版本号将发布至NuGet上。Note:版本号不变化时将不会发布至Nuget上
+[assembly: AssemblyVersion("1.0.6.0")]  //已取消CI脚本的版本号替换功能，该版本号将发布至NuGet上。Note:版本号不变化时将不会发布至Nuget上
 //[assembly: AssemblyFileVersion("1.0.0.0")]
 
 
 /*
 
+
+
+v 1.0.6.0
+-----------------
+. Json序列化时的null判断
+. 升级相关引用的版本号
+
+
+
 v 1.0.5.0
 -----------------
 . 增加基本类型的相关扩展
 . 结构调整
-
 
 v 0.1.4.0
 -----------------

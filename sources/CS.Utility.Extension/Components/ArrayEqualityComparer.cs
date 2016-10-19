@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace CS.Componets
+namespace CS.Components
 {
     /// <summary>
     /// 数据比较

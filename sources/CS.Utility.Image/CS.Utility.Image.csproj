@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F832200-BAF8-4D9C-9931-5F96ACC42305}</ProjectGuid>
+    <ProjectGuid>{19533494-425D-4C44-9F70-2C2586258C78}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CS.NLogAdapter</RootNamespace>
-    <AssemblyName>CS.Utility.NLogAdapter</AssemblyName>
+    <RootNamespace>CS</RootNamespace>
+    <AssemblyName>CS.Utility.Image</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,12 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\cszi.visualstudio.com\CSCMSV6\sources\packages\NLog.4.4.3\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,23 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
+    <Compile Include="..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
       <Link>Properties\AssemblyCompanyInfo.cs</Link>
     </Compile>
-    <Compile Include="NLogFactory.cs" />
-    <Compile Include="NLogWrapper.cs" />
+    <Compile Include="..\CS.Utility\Properties\AssemblyVersionInfo.cs">
+      <Link>Properties\AssemblyVersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\CS.Utility\CS.Utility.csproj">
-      <Project>{10058f6a-905f-4afd-83d8-05d6fe7f651d}</Project>
-      <Name>CS.Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Config.transform" />
-    <None Include="Demo.config" />
-    <None Include="packages.config" />
+    <Compile Include="Utils\ImageHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

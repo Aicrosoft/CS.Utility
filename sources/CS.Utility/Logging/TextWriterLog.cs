@@ -143,24 +143,25 @@ namespace CS.Logging
         private void Dump(string prefix, string message, params object[] args)
         {
             var line =
-                $"{DateTime.Now:yyyy-MM-dd' 'HH:mm:ss} [{prefix}] {Thread.CurrentThread.ManagedThreadId} {_name} - " +
+                $"{DateTime.Now:yyyy-MM-dd' 'HH:mm:ss:ff} [{prefix}] {Thread.CurrentThread.ManagedThreadId} {_name} - " +
                 string.Format(message, args);
 
-            lock (_writer)
-            {
-                _writer.WriteLine(line);
-                _writer.Flush();
-            }
+            DumpWrite(line);
         }
 
         private void Dump(string prefix, object message)
         {
             var line =
-                $"{DateTime.Now:yyyy-MM-dd' 'HH:mm:ss} [{prefix}] {Thread.CurrentThread.ManagedThreadId} {_name} - {message}";
+                $"{DateTime.Now:yyyy-MM-dd' 'HH:mm:ss:ff} [{prefix}] {Thread.CurrentThread.ManagedThreadId} {_name} - {message}";
 
+            DumpWrite(line);
+        }
+
+        private void DumpWrite(string msg)
+        {
             lock (_writer)
             {
-                _writer.WriteLine(line);
+                _writer.WriteLine(msg);
                 _writer.Flush();
             }
         }

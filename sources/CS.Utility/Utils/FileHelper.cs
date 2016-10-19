@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using CS.Logging;
 using static System.String;
 
 namespace CS.Utils
@@ -12,6 +15,7 @@ namespace CS.Utils
     public class FileHelper
     {
 
+        private static readonly ILog log = LogManager.GetLogger(typeof(FileHelper));
 
         /// <summary>
         /// 将多个文件拷贝至目标目录
@@ -27,7 +31,7 @@ namespace CS.Utils
                 //Console.WriteLine(destFile);
                 if (!overwrite && File.Exists(destFile))
                 {
-                    DebugConsole.Debug($"{destFile}已经存在，跳过。");
+                    log.Warn($"{destFile}已经存在，跳过。");
                     return;
                 }
                 GetFullPathCreateIfNeed(destFile);
@@ -45,11 +49,31 @@ namespace CS.Utils
         {
             if (!overwrite && File.Exists(destFile))
             {
-                DebugConsole.Debug($"{destFile}已经存在，跳过。");
+                log.Warn($"{destFile}已经存在，跳过。");
                 return;
             }
             GetFullPathCreateIfNeed(destFile);
             File.Copy(sourceFile, destFile,overwrite);
+        }
+
+        /// <summary>
+        /// 返回文件名
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <returns></returns>
+        public static string GetFileName(string fullPath)
+        {
+            return Path.GetFileName(fullPath);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullPaths"></param>
+        /// <returns></returns>
+        public static string[] GetFileNames(string[] fullPaths)
+        {
+            return fullPaths.Select(Path.GetFileName).ToArray();
         }
 
         /// <summary>
@@ -70,6 +94,30 @@ namespace CS.Utils
         }
 
         /// <summary>
+        /// 返回所有子目录名称(非全路径)
+        /// </summary>
+        /// <param name="relativeFolder">相对路径，如：~/Templates/some/</param>
+        /// <returns></returns>
+        public static string[] GetSubFolderNames(string relativeFolder)
+        {
+            var dics = GetSubDictionary(relativeFolder);
+            return (from dic in dics let leng = dic.LastIndexOf("\\", StringComparison.Ordinal) select dic.Substring(leng + 1, dic.Length - leng - 1)).ToArray();
+        }
+
+        /// <summary>
+        /// 获取当前目录下的所有子目录全路径
+        /// </summary>
+        /// <param name="relativeFolder">相对路径，如：~/Templates/some/</param>
+        /// <returns></returns>
+        public static string[] GetSubDictionary(string relativeFolder)
+        {
+            var folderName = GetFullPath(relativeFolder);
+            var dics = Directory.GetDirectories(folderName);
+            return dics;
+        }
+
+
+        /// <summary>
         /// 保存文件，不存在路径自动创建，默认UTF8编码
         /// </summary>
         /// <param name="file"></param>
@@ -81,7 +129,7 @@ namespace CS.Utils
             var filePath = GetFullPathCreateIfNeed(file);
             if (File.Exists(filePath) && !overwrite)
             {
-                DebugConsole.Debug($"{filePath}已经存在，跳过。");
+                log.Warn($"{filePath}已经存在，跳过。");
                 return;
             }
             File.WriteAllText(filePath, content, encoding ?? Encoding.UTF8);
@@ -92,7 +140,7 @@ namespace CS.Utils
         /// </summary>
         /// <param name="relativeFileName">相对路径的文件名：~/xx/xx/xx.png</param>
         /// <returns></returns>
-        static string GetFullPathCreateIfNeed(string relativeFileName)
+        public static string GetFullPathCreateIfNeed(string relativeFileName)
         {
             var fullFileName = GetFullPath(relativeFileName);
             var dicName = Path.GetDirectoryName(fullFileName);
@@ -170,6 +218,25 @@ namespace CS.Utils
                 path = AppHelper.BaseDirectory + path.TrimStart('~', Path.DirectorySeparatorChar);
             return path;
         }
+
+
+        //public string FullPath(string templatePath)
+        //{
+        //    if (templatePath == null || !Regex.IsMatch(templatePath, @"^[^.\/][a-zA-Z0-9_\/]+$"))
+        //        throw new InvalidOperationException("文件路径错误");
+
+        //    var basePath = templatePath.Contains("/")
+        //        ? Path.Combine(Root, Path.GetDirectoryName(templatePath))
+        //        : Root;
+
+        //    var fileName = string.Format("_{0}.liquid", Path.GetFileName(templatePath));
+
+        //    var fullPath = Regex.Replace(Path.Combine(basePath, fileName), @"\\|/", ".");
+
+        //    return fullPath;
+        //}
+
+
         ///// <summary>
         ///// 返回扩展名
         ///// </summary>

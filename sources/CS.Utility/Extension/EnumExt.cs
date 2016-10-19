@@ -2,7 +2,11 @@
 
 namespace CS.Extension
 {
-    public static class EnumExt
+
+    /// <summary>
+    /// 枚举扩展
+    /// </summary>
+    public static class Extension
     {
 
 

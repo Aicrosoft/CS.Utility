@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using CS.Logging;
 
 namespace CS.Utils
 {
@@ -8,13 +9,14 @@ namespace CS.Utils
     /// </summary>
     public class DebugConsole
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof (DebugConsole));
         /// <summary>
         /// 红，背白
         /// </summary>
         /// <param name="msg"></param>
         public static void Fatal(string msg)
         {
-            WriteLine(msg,ConsoleColor.Red,ConsoleColor.White);
+            log.Fatal(msg);
         }
 
         /// <summary>
@@ -23,7 +25,7 @@ namespace CS.Utils
         /// <param name="msg"></param>
         public static void Error(string msg)
         {
-            WriteLine(msg,ConsoleColor.Red,Console.BackgroundColor);
+            log.Error(msg);
         }
 
         /// <summary>
@@ -32,7 +34,7 @@ namespace CS.Utils
         /// <param name="msg"></param>
         public static void Warn(string msg)
         {
-            WriteLine(msg, ConsoleColor.Yellow, Console.BackgroundColor);
+            log.Warn(msg);
         }
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace CS.Utils
         [Conditional("DEBUG")]
         public static void Debug(string msg)
         {
-            WriteLine(msg, ConsoleColor.DarkGray, Console.BackgroundColor);
+            log.Debug(msg);
         }
 
         /// <summary>
@@ -51,19 +53,10 @@ namespace CS.Utils
         /// <param name="msg"></param>
         public static void Info(string msg)
         {
-            WriteLine(msg, ConsoleColor.Green, Console.BackgroundColor);
+            log.Info(msg);
         }
 
-        public static void WriteLine(string msg, ConsoleColor foreColor, ConsoleColor backColor)
-        {
-            var currentForeColor = Console.ForegroundColor;
-            var currentBackColor = Console.BackgroundColor;
-            Console.ForegroundColor = foreColor;
-            Console.BackgroundColor = backColor;
-            Console.WriteLine(msg);
-            Console.ForegroundColor = currentForeColor;
-            Console.BackgroundColor = currentBackColor;
-        }
+        
 
         
     }

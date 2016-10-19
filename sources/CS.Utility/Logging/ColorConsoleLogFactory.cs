@@ -2,16 +2,18 @@
 
 namespace CS.Logging
 {
-    public class ConsoleLogFactory : ILogFactory
+
+
+    public class ColorConsoleLogFactory : ILogFactory
     {
         ILog ILogFactory.GetLogger(string name)
         {
-            return new TextWriterLog(name, Console.Out);
+            return new ColorConsoleLog(name, Console.Out);
         }
 
         ILog ILogFactory.GetLogger(Type type)
         {
-            return new TextWriterLog(type.FullName, Console.Out);
+            return new ColorConsoleLog(type.FullName, Console.Out);
         }
     }
 }

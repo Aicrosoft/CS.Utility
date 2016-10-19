@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -158,6 +159,41 @@ namespace CS.Extension
         public static string Right(this string s, int length)
         {
             return s.Length <= length ? s : s.Substring(s.Length - length, length);
+        }
+
+        #endregion
+
+
+        #region 字符串重复
+
+
+        /// <summary>
+        /// 将该字符串重复一定次数
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static string Repeat(this string str, int num)
+        {
+            var list = new List<string>();
+            for (int i = 0; i < num; i++)
+            {
+                list.Add(str);
+            }
+            return string.Join("", list.ToArray());
+        }
+
+        /// <summary>
+        /// 首参固定，次参重复一定次数
+        /// </summary>
+        /// <param name="firstStr"></param>
+        /// <param name="repeatBlackStr"></param>
+        /// <param name="repeatStr"></param>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static string Repeat(this string repeatBlackStr, string firstStr, string repeatStr, int num)
+        {
+            return num < 1 ? null : string.Concat(repeatBlackStr.Repeat(num - 1), firstStr, repeatStr.Repeat(1));
         }
 
         #endregion

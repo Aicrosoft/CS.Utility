@@ -42,7 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Result.cs" />
+    <Compile Include="Attribute\EditEnableAttribute.cs" />
+    <Compile Include="Attribute\EnumExtAttribute.cs" />
+    <Compile Include="Attribute\EnumInfo.cs" />
+    <Compile Include="Attribute\IgnoreAttribute.cs" />
+    <Compile Include="Attribute\TextAttribute.cs" />
+    <Compile Include="Attribute\ValidationAttribute.cs" />
     <Compile Include="Configuration\ConfigHelper.cs" />
     <Compile Include="Configuration\ConfigurationHelper.cs" />
     <Compile Include="Configuration\HandlerBase.cs" />
@@ -85,13 +90,15 @@
     <Compile Include="Http\HttpParam.cs" />
     <Compile Include="Http\HttpParams.cs" />
     <Compile Include="Http\SyncHttp.cs" />
-    <Compile Include="Logging\ConsoleLogFactory.cs" />
+    <Compile Include="Logging\ColorConsoleLogFactory.cs" />
     <Compile Include="Logging\DiagnosticsLogFactory.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILogFactory.cs" />
     <Compile Include="Logging\LogManager.cs" />
     <Compile Include="Logging\NullLoggerFactory.cs" />
+    <Compile Include="Logging\ColorConsoleLog.cs" />
     <Compile Include="Logging\TextWriterLog.cs" />
+    <Compile Include="Logging\Tracer.cs" />
     <Compile Include="Properties\AssemblyCompanyInfo.cs" />
     <Compile Include="Properties\AssemblyVersionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
