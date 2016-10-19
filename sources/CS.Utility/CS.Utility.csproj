@@ -104,6 +104,7 @@
     <Compile Include="Serialization\XmlCdataText.cs" />
     <Compile Include="Serialization\XmlSerializor.cs" />
     <Compile Include="SR.cs" />
+    <Compile Include="Storage\BinaryStorage.cs" />
     <Compile Include="Storage\FileStorage.cs" />
     <Compile Include="Storage\StringStorage.cs" />
     <Compile Include="Storage\XmlStorage.cs" />

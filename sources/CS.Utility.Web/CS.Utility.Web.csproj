@@ -45,7 +45,6 @@
     <Compile Include="..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
       <Link>Properties\AssemblyCompanyInfo.cs</Link>
     </Compile>
-    <Compile Include="Extension\HtmlExt.cs" />
     <Compile Include="Extension\JsonExt.cs" />
     <Compile Include="Extension\StringExt.cs" />
     <Compile Include="Extension\UrlExt.cs" />

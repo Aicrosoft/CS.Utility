@@ -21,7 +21,7 @@ namespace CS.Extension
             var sf = html.Replace("<", "&#60");
             sf = sf.Replace(">", "&#62");
             return sf;
-        }
+        } 
 
         /// <summary>
         /// 先截取后转为安全HTML字符串
