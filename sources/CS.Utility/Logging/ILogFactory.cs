@@ -7,6 +7,13 @@ namespace CS.Logging
     /// </summary>
     public interface ILogFactory
     {
+
+        /// <summary>
+        /// 设定配置文件路径
+        /// </summary>
+        /// <param name="path"></param>
+        void SetLogConfigFile(string path);
+
         /// <summary>
         /// 获取直接给出名称的日志
         /// </summary>

@@ -12,6 +12,11 @@ namespace CS.Logging
     public interface ILog
     {
         /// <summary>
+        /// 消息输出可用 <see cref="LogLevel.Trace" />
+        /// </summary>
+        bool IsTraceEnabled { get; }
+
+        /// <summary>
         /// 消息输出可用 <see cref="LogLevel.Debug" />
         /// </summary>
         bool IsDebugEnabled { get; }
@@ -35,6 +40,41 @@ namespace CS.Logging
         /// 消息输出可用 <see cref="LogLevel.Fatal" />
         /// </summary>
         bool IsFatalEnabled { get; }
+
+
+        /// <summary>
+        /// Trace消息输出
+        /// </summary>
+        /// <param name="message"></param>
+        void Trace(object message);
+
+        /// <summary>
+        /// Trace消息，并且包含<see cref="System.Exception" /> 的堆栈消息
+        /// </summary>
+        /// <param name="message">日志消息</param>
+        /// <param name="exception">包括跟踪堆栈的异常</param>
+        void Trace(object message, Exception exception);
+
+        /// <summary>
+        /// Trace ，使用格式化
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        void TraceFormat(string format, params object[] args);
+
+        //void Debug(string format, object arg0);
+
+        //void Debug(string format, object arg0, object arg1);
+
+        //void DebugF(string format, object arg0, object arg1, object arg2);
+
+        /// <summary>
+        /// Trace ，使用格式化
+        /// </summary>
+        /// <param name="provider"></param>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        void TraceFormat(IFormatProvider provider, string format, params object[] args);
 
 
         /// <summary>
@@ -225,26 +265,30 @@ namespace CS.Logging
         /// <summary>
         /// 输出全开
         /// </summary>
-        All = Debug | Info | Warn | Error | Fatal,
+        All = Trace | Debug | Info | Warn | Error | Fatal,
+        /// <summary>
+        /// 跟踪
+        /// </summary>
+        Trace = 1,
         /// <summary>
         /// 调试 对应条件编译Debug
         /// </summary>
-        Debug = 1,
+        Debug = 2,
         /// <summary>
         /// 消息
         /// </summary>
-        Info = 2,
+        Info = 4,
         /// <summary>
         /// 警告
         /// </summary>
-        Warn = 4,
+        Warn = 8,
         /// <summary>
         /// 错误
         /// </summary>
-        Error = 8,
+        Error = 16,
         /// <summary>
         /// 致命错误
         /// </summary>
-        Fatal = 16,
+        Fatal = 32,
     }
 }

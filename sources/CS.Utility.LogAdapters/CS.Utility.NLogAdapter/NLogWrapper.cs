@@ -14,6 +14,7 @@ namespace CS.NLogAdapter
 
         #region [ ILog                         ]
 
+        bool ILog.IsTraceEnabled => _log.IsTraceEnabled;
 
         bool ILog.IsDebugEnabled => _log.IsDebugEnabled;
 
@@ -24,6 +25,28 @@ namespace CS.NLogAdapter
         bool ILog.IsErrorEnabled => _log.IsErrorEnabled;
 
         bool ILog.IsFatalEnabled => _log.IsFatalEnabled;
+
+        void ILog.Trace(object message)
+        {
+            _log.Trace(message);
+        }
+
+        void ILog.Trace(object message, Exception exception)
+        {
+            //_log.DebugException((message ?? string.Empty).ToString(), exception);
+            _log.Trace(exception, message?.ToString());
+        }
+
+
+        void ILog.TraceFormat(string format, params object[] args)
+        {
+            _log.Trace(format, args);
+        }
+
+        void ILog.TraceFormat(IFormatProvider provider, string format, params object[] args)
+        {
+            _log.Trace(provider, format, args);
+        }
 
         void ILog.Debug(object message)
         {

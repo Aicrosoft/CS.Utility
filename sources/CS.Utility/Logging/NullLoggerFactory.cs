@@ -7,6 +7,11 @@ namespace CS.Logging
     /// </summary>
     public class NullLoggerFactory : ILogFactory
     {
+        public void SetLogConfigFile(string path)
+        {
+            //throw new NotImplementedException();
+        }
+
         ILog ILogFactory.GetLogger(string name)
         {
             return NullLogger.Instance;
@@ -29,6 +34,8 @@ namespace CS.Logging
 
             #region [ ILog                         ]
 
+            bool ILog.IsTraceEnabled => false;
+
             bool ILog.IsDebugEnabled => false;
 
             bool ILog.IsInfoEnabled => false;
@@ -38,6 +45,22 @@ namespace CS.Logging
             bool ILog.IsErrorEnabled => false;
 
             bool ILog.IsFatalEnabled => false;
+
+            void ILog.Trace(object message)
+            {
+            }
+
+            void ILog.Trace(object message, Exception exception)
+            {
+            }
+
+            void ILog.TraceFormat(string format, params object[] args)
+            {
+            }
+
+            void ILog.TraceFormat(IFormatProvider provider, string format, params object[] args)
+            {
+            }
 
             void ILog.Debug(object message)
             {

@@ -15,6 +15,8 @@ namespace CS.Log4NetAdapter
 
         #region [ ILog                         ]
 
+        bool ILog.IsTraceEnabled => false; //Log4Net没有Trace级别
+
         bool ILog.IsDebugEnabled => _log.IsDebugEnabled;
 
         bool ILog.IsInfoEnabled => _log.IsInfoEnabled;
@@ -24,6 +26,29 @@ namespace CS.Log4NetAdapter
         bool ILog.IsErrorEnabled => _log.IsErrorEnabled;
 
         bool ILog.IsFatalEnabled => _log.IsFatalEnabled;
+
+
+        void ILog.Trace(object message)
+        {
+           
+        }
+
+        void ILog.Trace(object message, Exception exception)
+        {
+           
+        }
+
+        void ILog.TraceFormat(string format, params object[] args)
+        {
+           
+        }
+
+        void ILog.TraceFormat(IFormatProvider provider, string format, params object[] args)
+        {
+            
+        }
+
+
 
         void ILog.Debug(object message)
         {

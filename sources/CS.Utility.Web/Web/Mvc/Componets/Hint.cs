@@ -1,4 +1,4 @@
-﻿using CS.Componets;
+﻿using CS.Components;
 using CS.Extension;
 
 namespace CS.Web.Mvc.Componets

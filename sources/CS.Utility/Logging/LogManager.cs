@@ -53,6 +53,12 @@ namespace CS.Logging
 #endif
         }
 
+        public static void SetLogConfigFile(string path)
+        {
+            if (_factory == null) throw new InvalidOperationException("LogFactory is not a instance.");
+            _factory.SetLogConfigFile(path);
+        }
+
         /// <summary>
         /// 手动赋值日志工厂
         /// </summary>

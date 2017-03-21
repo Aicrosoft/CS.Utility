@@ -158,7 +158,7 @@ namespace CS.Utils
         {
             var fullFile = GetFullPath(fileName);
             var basePath = AppHelper.BaseDirectory;
-            return fullFile.Replace(basePath, "");
+            return fullFile.Replace(basePath, ""); //"tmp\\tmp_170315184314_1.jpg"
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace CS.Utils
         public static string GetWebRelativePath(string fileName)
         {
             var realName = GetRelativePath(fileName);
-            return $"\\{realName.Replace("/", "\\")}";
+            return $"/{realName.Replace("\\", "/")}";
         }
 
         /// <summary>

@@ -55,6 +55,7 @@
     <Compile Include="Configuration\KeyValueSectionHandler.cs" />
     <Compile Include="Configuration\LoggerSection.cs" />
     <Compile Include="Configuration\SectionBase.cs" />
+    <Compile Include="Cryptography\AES.cs" />
     <Compile Include="Cryptography\BigInteger.cs" />
     <Compile Include="Cryptography\Md5.cs" />
     <Compile Include="Cryptography\Rsa.cs" />

@@ -20,6 +20,8 @@ namespace CS.Logging
             _writer = writer;
         }
 
+        bool ILog.IsTraceEnabled => true;
+
         bool ILog.IsDebugEnabled => true;
 
         bool ILog.IsInfoEnabled => true;
@@ -29,6 +31,28 @@ namespace CS.Logging
         bool ILog.IsErrorEnabled => true;
 
         bool ILog.IsFatalEnabled => true;
+
+
+        void ILog.Trace(object message)
+        {
+            Dump(LogLevel.Trace, message);
+        }
+
+        void ILog.Trace(object message, Exception exception)
+        {
+            Dump(LogLevel.Trace, message + " - " + exception);
+        }
+
+
+        void ILog.TraceFormat(string format, params object[] args)
+        {
+            Dump(LogLevel.Trace, format, args);
+        }
+
+        void ILog.TraceFormat(IFormatProvider provider, string format, params object[] args)
+        {
+            Dump(LogLevel.Trace, string.Format(provider, format, args));
+        }
 
         void ILog.Debug(object message)
         {

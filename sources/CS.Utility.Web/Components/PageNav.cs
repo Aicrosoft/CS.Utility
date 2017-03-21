@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using CS.Extension;
 
-namespace CS.Componets
+namespace CS.Components
 {
     public class PageNav
     {

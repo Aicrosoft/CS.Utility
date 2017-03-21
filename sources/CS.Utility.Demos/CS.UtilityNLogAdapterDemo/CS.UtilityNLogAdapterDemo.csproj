@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F832200-BAF8-4D9C-9931-5F96ACC42305}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{6AE83869-076C-49D1-B202-BB86F3FF321E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CS.NLogAdapter</RootNamespace>
-    <AssemblyName>CS.Utility.NLogAdapter</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>CS.UtilityNLogAdapterDemo</RootNamespace>
+    <AssemblyName>CS.UtilityNLogAdapterDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,24 +47,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CS.Utility\Properties\AssemblyCompanyInfo.cs">
-      <Link>Properties\AssemblyCompanyInfo.cs</Link>
-    </Compile>
-    <Compile Include="NLogFactory.cs" />
-    <Compile Include="NLogWrapper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="config\NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CS.Utility.LogAdapters\CS.Utility.NLogAdapter\CS.Utility.NLogAdapter.csproj">
+      <Project>{1f832200-baf8-4d9c-9931-5f96acc42305}</Project>
+      <Name>CS.Utility.NLogAdapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CS.Utility\CS.Utility.csproj">
       <Project>{10058f6a-905f-4afd-83d8-05d6fe7f651d}</Project>
       <Name>CS.Utility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Config.transform" />
-    <None Include="Demo.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -22,6 +22,11 @@ namespace CS.Logging
         }
 
 
+        public void SetLogConfigFile(string path)
+        {
+            //throw new NotImplementedException();
+        }
+
         public ILog GetLogger(string name)
         {
             return new TextWriterLog(name, _writer);

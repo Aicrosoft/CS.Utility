@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace CS.Componets
+namespace CS.Components
 {
     /// <summary>
     /// Ajax返回的基本信息

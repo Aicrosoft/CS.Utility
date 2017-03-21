@@ -6,6 +6,11 @@ namespace CS.Logging
 
     public class ColorConsoleLogFactory : ILogFactory
     {
+        public void SetLogConfigFile(string path)
+        {
+            //throw new NotImplementedException();
+        }
+
         ILog ILogFactory.GetLogger(string name)
         {
             return new ColorConsoleLog(name, Console.Out);

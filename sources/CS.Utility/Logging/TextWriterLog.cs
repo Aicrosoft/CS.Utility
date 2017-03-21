@@ -10,6 +10,7 @@ namespace CS.Logging
     /// </summary>
     internal class TextWriterLog : ILog
     {
+        private const string PrefixTrace = "TRACE";
         private const string PrefixDebug = "DEBUG";
         private const string PrefixInfo = "INFO";
         private const string PrefixWarn = "WARN";
@@ -25,6 +26,8 @@ namespace CS.Logging
             _writer = writer;
         }
 
+        bool ILog.IsTraceEnabled => true;
+
         bool ILog.IsDebugEnabled => true;
 
         bool ILog.IsInfoEnabled => true;
@@ -34,6 +37,26 @@ namespace CS.Logging
         bool ILog.IsErrorEnabled => true;
 
         bool ILog.IsFatalEnabled => true;
+
+        void ILog.Trace(object message)
+        {
+            Dump(PrefixTrace, message);
+        }
+
+        void ILog.Trace(object message, Exception exception)
+        {
+            Dump(PrefixTrace, message + " - " + exception);
+        }
+
+        void ILog.TraceFormat(string format, params object[] args)
+        {
+            Dump(PrefixTrace, format, args);
+        }
+
+        void ILog.TraceFormat(IFormatProvider provider, string format, params object[] args)
+        {
+            Dump(PrefixTrace, string.Format(provider, format, args));
+        }
 
         void ILog.Debug(object message)
         {

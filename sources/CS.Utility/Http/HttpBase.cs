@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Text;
+using CS.Extension;
 
 namespace CS.Http
 {
@@ -51,6 +52,10 @@ namespace CS.Http
         /// </summary>
         public HttpStatusCode StatusCode { get; protected set; }
 
+        /// <summary>
+        /// 请求内容类型
+        /// </summary>
+        public string ContentType { get; set; }
 
         /// <summary>
         /// 构造一个请求，并初始化相关信息
@@ -67,6 +72,9 @@ namespace CS.Http
             webRequest.ServicePoint.Expect100Continue = false;//true时会询问Server使用愿意接受数据,接收到Server返回的100-continue应答以后, 才把数据POST给Server,http://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.expect100continue(v=vs.80).aspx
             webRequest.Timeout = RequestTimeout;
             webRequest.Method = method.ToString();
+
+            if (!ContentType.IsNullOrWhiteSpace())
+                webRequest.ContentType = ContentType;
             if (!string.IsNullOrEmpty(UserAgent))
                 webRequest.UserAgent = UserAgent;
             if (!string.IsNullOrEmpty(Accept))
