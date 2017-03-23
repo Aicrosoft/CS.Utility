@@ -68,9 +68,9 @@ namespace CS.Extension
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string ToProperty(this string value)
+        public static string ToHtmlProperty(this string value)
         {
-            return value.ToProperty(value);
+            return value.ToHtmlProperty(value);
         }
 
         /// <summary>
@@ -79,32 +79,32 @@ namespace CS.Extension
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string ToProperty(this string value, string key)
+        public static string ToHtmlProperty(this string value, string key)
         {
             return string.IsNullOrWhiteSpace(value) ? null : $"{key}=\"{value}\"";
         }
 
         /// <summary>
-        /// 如果值不为空时生成 key="value" 字符串
+        /// 设置Html元素的属性 如果值不为空时生成 key="value" 字符串
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string SetProperty(this string key, string value)
+        public static string SetHtmlProperty(this string key, string value)
         {
             return string.IsNullOrWhiteSpace(value) ? null : $"{key}=\"{value}\"";
         }
 
         /// <summary>
-        /// 根据表达式结果设定属性值
+        /// 设置Html元素的属性 ，根据表达式结果设定属性值
         /// </summary>
         /// <param name="key"></param>
         /// <param name="express"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string SetProperty(this  bool express, string key, string value)
+        public static string SetHtmlProperty(this  bool express, string key, string value)
         {
-            return express ? key.SetProperty(value) : null;
+            return express ? key.SetHtmlProperty(value) : null;
         }
 
 

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Web;
 
 namespace CS.Validation
 {
@@ -111,6 +109,30 @@ namespace CS.Validation
 
             public string ParamValue { get; set; }
         }
+
+
+        /// <summary>
+        /// 如果验证Func成立，则抛出异常消息
+        /// </summary>
+        /// <param name="validateFunc"></param>
+        /// <param name="message">空时不抛异常</param>
+        public static void Validate(Func<bool> validateFunc, string message = null)
+        {
+            if (validateFunc())
+                throw new ParameterException(message);
+        }
+        /// <summary>
+        /// 直接抛出参数相关的异常
+        /// <remarks>
+        /// 主要用于修改原有异常的，不抛出原有的异常内容
+        /// </remarks>
+        /// </summary>
+        /// <param name="message"></param>
+        public static void Throw(string message)
+        {
+            throw new ParameterException(message);
+        }
+
     }
 
 }

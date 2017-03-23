@@ -77,9 +77,12 @@
     <Compile Include="Extension\HexStringExt.cs" />
     <Compile Include="Extension\IntExt.cs" />
     <Compile Include="Extension\LongExt.cs" />
+    <Compile Include="Extension\NameValueCollectionExt.cs" />
     <Compile Include="Extension\ObjectExt.cs" />
+    <Compile Include="Extension\QueueExt.cs" />
     <Compile Include="Extension\ReflectingPrepareExt.cs" />
     <Compile Include="Extension\ShortExt.cs" />
+    <Compile Include="Extension\StackExt.cs" />
     <Compile Include="Extension\StringExt.cs" />
     <Compile Include="Extension\TypeExt.cs" />
     <Compile Include="Extension\UShortExt.cs" />
@@ -125,6 +128,10 @@
     <Compile Include="Utils\HashHelper.cs" />
     <Compile Include="Utils\TaskHelper.cs" />
     <Compile Include="Utils\TypeHelper.cs" />
+    <Compile Include="Validation\ParameterException.cs" />
+    <Compile Include="Validation\RegexLib.cs" />
+    <Compile Include="Validation\Valid.cs" />
+    <Compile Include="Validation\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Res.resx">

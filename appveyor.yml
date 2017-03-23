@@ -68,7 +68,7 @@ build:
 # scripts to run before build  
 before_build:
   #- ps: (New-Object Net.WebClient).DownloadFile('https://www.nuget.org/nuget.exe', 'C:\Tools\NuGet\NuGet.exe')
-  - nuget restore sources\CS.Utility.sln
+  - nuget restore sources\CS.Utility_VS2015.sln
   - nuget restore sources\CS.Utility.Web\packages.config -PackagesDirectory sources\packages
   
   

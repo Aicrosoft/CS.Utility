@@ -21,8 +21,13 @@ master branch status : [![Build status](https://ci.appveyor.com/api/projects/sta
 ---------- -        
 - CS.Utility   [![NuGet](https://img.shields.io/nuget/v/CS.Utility.svg)](https://www.nuget.org/packages/CS.Utility/)          
           
-- CS.Utility.NLogAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.NLogAdapter.svg)](https://www.nuget.org/packages/CS.Utility.NLogAdapter/)       
-- CS.Utility.Log4NetAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Log4NetAdapter.svg)](https://www.nuget.org/packages/CS.Utility.Log4NetAdapter/)     
+- CS.Utility.NLogAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.NLogAdapter.svg)](https://www.nuget.org/packages/CS.Utility.NLogAdapter/)     
+  
+- CS.Utility.Log4NetAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Log4NetAdapter.svg)](https://www.nuget.org/packages/CS.Utility.Log4NetAdapter/)   
+
+- CS.Utility.Form  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Form.svg)](https://www.nuget.org/packages/CS.Utility.Form/) 
+
+- CS.Utility.Web  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Web.svg)](https://www.nuget.org/packages/CS.Utility.Web/)   
          
 
 

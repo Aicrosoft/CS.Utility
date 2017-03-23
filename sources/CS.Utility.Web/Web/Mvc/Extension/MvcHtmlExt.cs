@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web.Mvc;
+using CS.Extension;
 
 namespace CS.Web.Mvc.Extension
 {
@@ -54,5 +56,20 @@ namespace CS.Web.Mvc.Extension
         {
             return name1.Equals(name2, StringComparison.OrdinalIgnoreCase);
         }
+
+        /// <summary>
+        /// 设置在Mvc模板中的Html元素字符串
+        /// </summary>
+        /// <param name="express"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MvcHtmlString SetMvcProperty(this bool express, string key, string value)
+        {
+            return new MvcHtmlString(express.SetHtmlProperty(key,value));
+        }
+
+
+
     }
 }

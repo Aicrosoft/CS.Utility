@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace CS.Logging
 {
@@ -9,7 +10,11 @@ namespace CS.Logging
             IsOpen = IsDebug();
             if (IsOpen)
                 Level = LogLevel.All;
+
+            Log = LogManager.GetLogger();
         }
+
+        private static readonly ILog Log;
 
         /// <summary>
         /// 是否启用跟踪
@@ -29,6 +34,26 @@ namespace CS.Logging
         public static bool IsLog(LogLevel level)
         {
             return IsOpen && Level.HasFlag(level);
+        }
+        [Conditional("DEBUG")]
+        public static void Trace(string message)
+        {
+            Log.Trace(message);
+        }
+        [Conditional("DEBUG")]
+        public static void Trace(string message, Exception ex)
+        {
+            Log.Trace(message,ex);
+        }
+        [Conditional("DEBUG")]
+        public static void Debug(string message)
+        {
+            Log.Debug(message);
+        }
+        [Conditional("DEBUG")]
+        public static void Debug(string message, Exception ex)
+        {
+            Log.Debug(message, ex);
         }
 
         static bool IsDebug()

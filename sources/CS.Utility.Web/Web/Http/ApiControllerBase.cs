@@ -7,14 +7,12 @@ namespace CS.Web.Http
     {
         protected readonly ILog Log;
 
-        protected readonly ILog AppLog = LogManager.GetLogger();
+        //protected readonly ILog AppLog = LogManager.GetLogger();
 
         protected ApiControllerBase()
         {
             Log = LogManager.GetLogger(GetType());
         }
-
-
 
 
 

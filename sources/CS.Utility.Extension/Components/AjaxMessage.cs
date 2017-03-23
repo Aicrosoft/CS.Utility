@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace CS.Components
 {
@@ -55,7 +56,7 @@ namespace CS.Components
         /// <param name="result"></param>
         /// <param name="successMsg"></param>
         /// <param name="failMsg"></param>
-        public void Tip(bool result, string successMsg, string failMsg)
+        public virtual void Tip(bool result, string successMsg, string failMsg)
         {
             if (result)
             {
@@ -76,7 +77,7 @@ namespace CS.Components
         /// </summary>
         /// <param name="result"></param>
         /// <param name="msgTemplate">{0}占位成功或失败位置</param>
-        public void Tip(bool result, string msgTemplate)
+        public virtual void Tip(bool result, string msgTemplate)
         {
             if (result)
             {
@@ -92,25 +93,25 @@ namespace CS.Components
             }
         }
 
-        public void Success(string msg)
+        public virtual void Success(string msg)
         {
             MessageType = AjaxMessageType.Success;
             Message = msg;
         }
 
-        public void Info(string msg)
+        public virtual void Info(string msg)
         {
             MessageType = AjaxMessageType.Info;
             Message = msg;
         }
 
-        public void Warning(string msg)
+        public virtual void Warning(string msg)
         {
             MessageType = AjaxMessageType.Warning;
             Message = msg;
         }
 
-        public void Error(string msg)
+        public virtual void Error(string msg)
         {
             MessageType = AjaxMessageType.Error;
             Message = msg;

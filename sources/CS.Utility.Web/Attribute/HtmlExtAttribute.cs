@@ -1,4 +1,6 @@
 ﻿using System;
+using CS.Components;
+using CS.Html;
 
 namespace CS.Attribute
 {
@@ -31,28 +33,18 @@ namespace CS.Attribute
         public bool ReadOnly { get; set; }
 
         /// <summary>
+        /// 排序
+        /// </summary>
+        public int Order { get; set; }
+
+        public string DefaultValue { get; set; }
+
+        /// <summary>
         /// 当前属性元素类型
         /// </summary>
         public HtmlElementType Element { get; private set; }
 
     }
-
-    /// <summary>
-    /// HTML元素类型
-    /// </summary>
-    public enum HtmlElementType
-    {
-        None,
-
-        InputText,
-
-        InputNumber,
-
-        Password,
-
-        TextArea,
-    }
-
 
 
 

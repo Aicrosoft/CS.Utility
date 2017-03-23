@@ -20,11 +20,12 @@ namespace CS.Web.Mvc.Componets
         {
         }
 
-        public Hint(string title, string content)
+        public Hint(string title, string content,string code = "500")
         {
             Title = title;
             Content = content;
             Solution = "";
+            Code = code;
         }
 
         public bool Result { get; set; }
@@ -45,6 +46,11 @@ namespace CS.Web.Mvc.Componets
         /// 调试
         /// </summary>
         public string Debug { get; set; }
+
+        /// <summary>
+        /// 反馈的代码
+        /// </summary>
+        public string Code { get; set; }
 
 
         //public static explicit operator  AjaxMessage(Hint hint)

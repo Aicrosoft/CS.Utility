@@ -1,11 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace CS.Extension
 {
     public static class ObjectExt
     {
+
+
+        /// <summary>
+        /// 将被解析的对像的所有加上了扩展特性的属性返回
+        /// </summary>
+        /// <typeparam name="T">关于<see cref="System.Attribute"/>的扩展类型</typeparam>
+        /// <param name="o">被解析的对像</param>
+        /// <returns></returns>
+        public static List<Tuple<T, PropertyInfo>> GetProperties<T>(this object o) where T: System.Attribute
+        {
+            var ps = o.GetType().GetProperties();
+            return (from p in ps let ext = p.GetCustomAttribute<T>() where ext != null select new Tuple<T, PropertyInfo>(ext, p)).ToList();
+        }
+
+
         ///// <summary>
         ///// 填充集合中Key所对应的所有属性值
         ///// </summary>
@@ -20,6 +36,19 @@ namespace CS.Extension
         //        dic[o1.Key] = ps.FirstOrDefault(x => x.Name.Equals(o1.Key, comparison))?.GetValue(o);
         //    }
         //}
+
+        /// <summary>
+        /// 返回属性的值
+        /// </summary>
+        /// <param name="o"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="comparison"></param>
+        /// <returns></returns>
+        public static object GetPropertyValue(this object o, string propertyName, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
+        {
+            var val = o.GetType().GetProperties().FirstOrDefault(x => x.Name.Equals(propertyName, comparison))?.GetValue(o);
+            return val;
+        }
 
         /// <summary>
         /// 获取集合中Keys所对应的所有属性值

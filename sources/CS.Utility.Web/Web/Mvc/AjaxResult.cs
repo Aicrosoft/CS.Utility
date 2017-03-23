@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Text;
 using System.Web.Mvc;
 using CS.Extension;
+using CS.Logging;
 
 namespace CS.Web.Mvc
 {

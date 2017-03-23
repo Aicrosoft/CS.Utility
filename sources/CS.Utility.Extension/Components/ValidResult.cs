@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace CS.Components
 {
     /// <summary>
-    /// 带验证的结果
+    /// 带多项验证的结果
     /// </summary>
     public class ValidResult
     {
