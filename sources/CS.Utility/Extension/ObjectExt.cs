@@ -8,6 +8,17 @@ namespace CS.Extension
     public static class ObjectExt
     {
 
+        /// <summary>
+        /// 是否有某个属性
+        /// </summary>
+        /// <param name="o"></param>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
+        public static bool Has(this object o, string propertyName)
+        {
+            return ((IDictionary<string, object>)o).ContainsKey(propertyName);
+        }
+
 
         /// <summary>
         /// 将被解析的对像的所有加上了扩展特性的属性返回

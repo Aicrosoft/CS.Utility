@@ -1,7 +1,6 @@
-﻿using CS.Components;
-using CS.Extension;
+﻿using CS.Extension;
 
-namespace CS.Web.Mvc.Componets
+namespace CS.Components
 {
     /// <summary>
     /// MVC用到的相关提示

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
+using CS.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CS.Utils.Tests
+namespace CS.UtilityTests.Utils
 {
     [TestClass]
     public class ArrayCopyPerformanceTests

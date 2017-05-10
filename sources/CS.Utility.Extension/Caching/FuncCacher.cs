@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CS.Caching
 {
@@ -9,11 +7,11 @@ namespace CS.Caching
     /// </summary>
     public class FuncCacher<TV> where TV : class
     {
-        private static readonly TinyCache<FuncCacheItem<TV>> dicCache;
+        private static readonly TinyCache<FuncCacheItem<TV>> DicCache;
 
         static FuncCacher()
         {
-            dicCache = new TinyCache<FuncCacheItem<TV>>();
+            DicCache = new TinyCache<FuncCacheItem<TV>>();
         }
 
         private FuncCacher()
@@ -29,7 +27,7 @@ namespace CS.Caching
         public static void Register(string key,Func<TV> function,TV value = null)
         {
             var item = new FuncCacheItem<TV>(function, value);
-            dicCache.Add(key,item);
+            DicCache.Add(key,item);
         }
 
         /// <summary>
@@ -39,7 +37,7 @@ namespace CS.Caching
         /// <returns></returns>
         public static TV GetValue(string key)
         {
-            var item = dicCache[key];
+            var item = DicCache[key];
 
 
             return null;

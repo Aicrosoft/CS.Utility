@@ -1,12 +1,4 @@
-﻿#region copyright info
-//------------------------------------------------------------------------------
-// <copyright company="ChaosStudio">
-//     Copyright (c) 2002-2010 巧思工作室.  All rights reserved.
-//     Contact:		email:atwind@cszi.com , QQ:3329091
-//		Link:		http://www.cszi.com
-// </copyright>
-//------------------------------------------------------------------------------
-#endregion
+﻿
 using System;
 
 namespace CS.Theory

@@ -1,8 +1,9 @@
 ﻿using System.Text;
 using System.Threading;
+using CS.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CS.Utils.Tests
+namespace CS.UtilityTests.Utils
 {
     [TestClass]
     public class CodeTimerTests

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using CS.Extension;
-using CS.Logging;
 
 namespace CS.Web.Mvc
 {
@@ -10,6 +9,10 @@ namespace CS.Web.Mvc
     /// </summary>
     public class AjaxResult : JsonResult
     {
+        /// <summary>
+        /// 是否将首字母小写
+        /// </summary>
+        public bool IsCamelCaseJson { get; set; }  
 
         public override void ExecuteResult(ControllerContext context)
         {
@@ -25,7 +28,8 @@ namespace CS.Web.Mvc
             }
             if (Data != null)
             {
-                response.Write(Data.ToJsonByJc());
+                var json = IsCamelCaseJson ? Data.ToCamelCaseJsonByJc() : Data.ToJsonByJc();
+                response.Write(json);
             }
         }
     }

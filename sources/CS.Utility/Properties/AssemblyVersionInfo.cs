@@ -1,4 +1,14 @@
-﻿using System.Reflection;
+﻿#region copyright info
+//------------------------------------------------------------------------------
+// <copyright company="ChaosDesign">
+//      Copyright (c) 巧思设计 All rights reserved.
+//      Contact:		email:atwind@cszi.com , QQ:3329091
+//	    Link:		http://www.cszi.com
+// </copyright>
+//------------------------------------------------------------------------------
+#endregion
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,17 +25,22 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.7.0")]  //已取消CI脚本的版本号替换功能，该版本号将发布至NuGet上。Note:版本号不变化时将不会发布至Nuget上
+[assembly: AssemblyVersion("1.0.8.0")]  //已取消CI脚本的版本号替换功能，该版本号将发布至NuGet上。Note:版本号不变化时将不会发布至Nuget上
 //[assembly: AssemblyFileVersion("1.0.0.0")]
 
 
 /*
 
 
+
+
+v 1.0.8.0
+-----------------
+. 信息标识统一
+
 v 1.0.7.0
 -----------------
 . 增加主键Id批删除
-
 
 v 1.0.6.0
 -----------------

@@ -1,13 +1,4 @@
-﻿#region copyright info
-//------------------------------------------------------------------------------
-// <copyright company="ChaosStudio">
-//     Copyright (c) 2002-2010 巧思工作室.  All rights reserved.
-//     Contact:		Email:atwind@cszi.com , QQ:3329091
-//		Link:		 http://www.cszi.com
-// </copyright>
-//------------------------------------------------------------------------------
-#endregion
-
+﻿
 using System;
 using System.Text.RegularExpressions;
 
@@ -27,7 +18,7 @@ namespace CS.Validation
     ///  </history>
     public static class Valid
     {
-         /// <summary>
+        /// <summary>
         /// 初始化。
         /// <para>初始化 <see cref="Verify"/> 委托 </para>
         /// </summary>
@@ -39,7 +30,7 @@ namespace CS.Validation
         /// <summary>
         /// 验证委托，必要时可以委托外部处理
         /// </summary>
-        internal static Func<string,string,bool> Verify;
+        internal static Func<string, string, bool> Verify;
 
         /// <summary>
         /// 恢复默认的委托方法
@@ -99,7 +90,21 @@ namespace CS.Validation
         {
             return Verify(input, RegexLib.ACCOUNT);
         }
-        
+
+        /// <summary>
+        /// 英文与数字的组合验证
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static bool EnglishStringValidator(string input, int min, int max)
+        {
+            var regPartten = "^[A-Za-z][A-Za-z0-9]{" + min + "," + max + "}$";
+            return Verify(input, regPartten);
+        }
+
+
         /// <summary>
         /// 名字验证
         /// 英文开头3-16 字符||中文开头 2-12 字符
@@ -120,7 +125,7 @@ namespace CS.Validation
         {
             return Verify(input, RegexLib.CHINESE_NAME);
         }
-        
+
         /// <summary>
         /// 密码验证:8~32位字符串
         /// </summary>
@@ -211,7 +216,7 @@ namespace CS.Validation
             return Verify(input.Replace(" ", ""), RegexLib.ID_STRINGS);
         }
 
-      
+
 
 
         #region 身份证验证

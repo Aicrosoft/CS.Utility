@@ -11,6 +11,7 @@ namespace CS.Web.Mvc.Extension
     {
         public static MvcHtmlString ToMvcString(this Tuple<HtmlExtAttribute,PropertyInfo> item,object defaultValue=null,string classNames = null)
         {
+            //if (item == null) return null;
             return HtmlElementRender.Create(item, defaultValue, classNames).ToMvcHtml();
         }
     }
