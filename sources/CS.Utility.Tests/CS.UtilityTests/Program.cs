@@ -1,5 +1,5 @@
 ﻿using System;
-using CS.Utils.Tests;
+using CS.UtilityTests.Utils;
 
 namespace CS.UtilityTests
 {

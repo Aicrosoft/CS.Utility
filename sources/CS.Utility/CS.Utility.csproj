@@ -48,6 +48,8 @@
     <Compile Include="Attribute\IgnoreAttribute.cs" />
     <Compile Include="Attribute\TextAttribute.cs" />
     <Compile Include="Attribute\ValidationAttribute.cs" />
+    <Compile Include="Caching\ItemsCacher.cs" />
+    <Compile Include="Caching\TinyCache.cs" />
     <Compile Include="Configuration\ConfigHelper.cs" />
     <Compile Include="Configuration\ConfigurationHelper.cs" />
     <Compile Include="Configuration\HandlerBase.cs" />
@@ -123,7 +125,9 @@
     <Compile Include="Utils\AppHelper.cs" />
     <Compile Include="Utils\CodeTimer.cs" />
     <Compile Include="Utils\DebugConsole.cs" />
+    <Compile Include="Utils\DynamicHelper.cs" />
     <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\GpsHelper.cs" />
     <Compile Include="Utils\GZipHelper.cs" />
     <Compile Include="Utils\HashHelper.cs" />
     <Compile Include="Utils\TaskHelper.cs" />

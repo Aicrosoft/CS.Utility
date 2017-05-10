@@ -20,6 +20,8 @@ current status: [![Build status](https://ci.appveyor.com/api/projects/status/er6
 master branch status : [![Build status](https://ci.appveyor.com/api/projects/status/er60oghxykhgjaqh/branch/master?svg=true)](https://ci.appveyor.com/project/cswares/cs-utility/branch/master)         
 ---------- -        
 - CS.Utility   [![NuGet](https://img.shields.io/nuget/v/CS.Utility.svg)](https://www.nuget.org/packages/CS.Utility/)          
+
+- CS.Utility.Extension  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.Extension.svg)](https://www.nuget.org/packages/CS.Utility.Extension/) 
           
 - CS.Utility.NLogAdapter  [![NuGet](https://img.shields.io/nuget/v/CS.Utility.NLogAdapter.svg)](https://www.nuget.org/packages/CS.Utility.NLogAdapter/)     
   

@@ -1,13 +1,4 @@
-﻿#region copyright info
-//------------------------------------------------------------------------------
-// <copyright company="ChaosStudio">
-//     Copyright (c) 2002-2010 巧思工作室.  All rights reserved.
-//     Contact:		MSN:zhouyu@cszi.com , QQ:478779122
-//		Link:				http://www.69sea.com http://www.cszi.com
-// </copyright>
-//------------------------------------------------------------------------------
-#endregion
-
+﻿
 using System.IO;
 
 

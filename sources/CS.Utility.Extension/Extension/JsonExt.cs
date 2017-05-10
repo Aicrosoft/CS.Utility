@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
 namespace CS.Extension
@@ -55,6 +56,7 @@ namespace CS.Extension
             //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             //}
         }
+        
 
         /// <summary>
         /// 转为Json，属性为骆驼拼写法

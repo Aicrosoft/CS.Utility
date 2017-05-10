@@ -58,9 +58,9 @@
     <Compile Include="Caching\Cacher.cs" />
     <Compile Include="Caching\FuncCacheItem.cs" />
     <Compile Include="Caching\FuncCacher.cs" />
-    <Compile Include="Caching\TinyCache.cs" />
     <Compile Include="Components\AjaxMessage.cs" />
     <Compile Include="Components\ArrayEqualityComparer.cs" />
+    <Compile Include="Components\Hint.cs" />
     <Compile Include="Components\ValidResult.cs" />
     <Compile Include="Data\ModelHandler.cs" />
     <Compile Include="Data\SqlHelper.cs" />
@@ -74,7 +74,9 @@
     <Compile Include="Email\MessageAttachmentList.cs" />
     <Compile Include="Email\MockSender.cs" />
     <Compile Include="Email\SmtpSender.cs" />
+    <Compile Include="Extension\DynamicExt.cs" />
     <Compile Include="Extension\HtmlExt.cs" />
+    <Compile Include="Extension\JObjectExt.cs" />
     <Compile Include="Extension\JsonExt.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

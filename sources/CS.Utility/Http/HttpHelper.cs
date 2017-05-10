@@ -66,7 +66,7 @@ namespace CS.Http
         /// <param name="urlParameters">参数集合</param>
         /// <param name="timeout">超时，豪秒</param>
         /// <returns></returns>
-        public static string Post(string url, HttpParams urlParameters, int timeout)
+        public static string Post(string url, HttpParams urlParameters, int timeout )
         {
             var sync = new SyncHttp(timeout);
             return sync.HttpPost(url, urlParameters);
@@ -79,7 +79,7 @@ namespace CS.Http
         /// <param name="data"></param>
         /// <param name="timeout"></param>
         /// <returns></returns>
-        public static string Post(string url, string data, int timeout)
+        public static string Post(string url, string data, int timeout = 12000)
         {
             var sync = new SyncHttp(timeout);
             return sync.HttpPost(url, data);

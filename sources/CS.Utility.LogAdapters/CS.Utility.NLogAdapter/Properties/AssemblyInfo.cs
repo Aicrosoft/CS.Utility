@@ -1,4 +1,14 @@
-﻿using System.Reflection;
+﻿#region copyright info
+//------------------------------------------------------------------------------
+// <copyright company="ChaosDesign">
+//      Copyright (c) 巧思设计 All rights reserved.
+//      Contact:		email:atwind@cszi.com , QQ:3329091
+//	    Link:		http://www.cszi.com
+// </copyright>
+//------------------------------------------------------------------------------
+#endregion
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -28,5 +38,5 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.4")]
+[assembly: AssemblyVersion("1.0.1.0")]
 //[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using CS.Logging;
 
 namespace CS.Attribute
 {
@@ -117,6 +118,7 @@ namespace CS.Attribute
             var list = new List<EnumInfo>();
             if (type.IsEnum)
             {
+                //Tracer.Trace($"GetItems-Type:{type.FullName}");
                 var fields = type.GetFields(BindingFlags.Static | BindingFlags.Public);
                 list = (from fi in fields select fi.GetValue(null) into value let name = Enum.GetName(type, value) where name != null select new EnumInfo { Name = name, Value = (int)value, NativeName = name }).ToList();
                 //var vs = Enum.GetValues(type);
@@ -138,7 +140,9 @@ namespace CS.Attribute
                     //item.BgColor = attr.BgColor;
                     //item.Order = attr.Order;
                 }
+                //Tracer.Trace($"Reload:{ignoreCached};GetItems-Type:{type.FullName};GetItems-List.Count:{list.Count}");
             }
+            //Tracer.Trace($"Reload:{ignoreCached};GetItems-Type:{type.FullName}; {list.Count}");
             //return list.Where(x => !x.Ignore).OrderBy(x => x.Order).Cast<EnumInfo>().ToList();
             return list.Where(x => !x.Ignore);
         }

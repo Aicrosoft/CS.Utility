@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using CS.Attribute;
 using CS.Extension;
+using CS.Logging;
 
 namespace CS.Html
 {
@@ -10,7 +11,9 @@ namespace CS.Html
     {
         public override string ToHtml()
         {
-            return $"<input type=\"text\"  {Item.Item2.Name.ToHtmlProperty("name")}  {Item.Item1.Description.ToHtmlProperty("placeholder")}  {DefaultValue.ToString().ToHtmlProperty("value")}  {ClassNames.ToHtmlProperty("class")} />";
+            //if (Item.Item1 == null || Item.Item2 == null) return "ERROR";
+            //Tracer.Trace($"DefaultValue:{DefaultValue};ClassNames:{ClassNames}");
+            return $"<input type=\"text\"  {Item.Item2.Name.ToHtmlProperty("name")}  {Item.Item1.Description.ToHtmlProperty("placeholder")}  {DefaultValue?.ToString().ToHtmlProperty("value")}  {ClassNames.ToHtmlProperty("class")} />";
         }
       
 

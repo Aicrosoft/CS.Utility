@@ -108,7 +108,6 @@
     <Compile Include="Utils\Guest.cs" />
     <Compile Include="Web\Http\ApiControllerBase.cs" />
     <Compile Include="Web\Mvc\AjaxResult.cs" />
-    <Compile Include="Web\Mvc\Componets\Hint.cs" />
     <Compile Include="Web\Mvc\ControllerBase.cs" />
     <Compile Include="Web\Mvc\Extension\HtmlExtAttributeExt.cs" />
     <Compile Include="Web\Mvc\Extension\HtmlHelperExt.cs" />
@@ -131,6 +130,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\Mvc\Componets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

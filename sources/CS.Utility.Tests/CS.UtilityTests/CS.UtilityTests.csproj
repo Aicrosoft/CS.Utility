@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ArrayCopyPerformanceTests.cs" />
     <Compile Include="Utils\CodeTimerTests.cs" />
+    <Compile Include="Utils\GpsTests.cs" />
     <Compile Include="Utils\TaskHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
